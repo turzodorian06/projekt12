@@ -17,6 +17,21 @@
             padding: 1rem;
             text-align: center;
         }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
         section {
             padding: 1rem 2rem;
         }
@@ -28,19 +43,52 @@
             padding: 1rem;
             background-color: #f2f2f2;
             border-radius: 5px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Stílus a vissza a tetejére gombhoz */
+    #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #004466;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        display: none;
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #003350;
+    }
     </style>
-</head>
+    </head>
 <body>
 
 <header>
     <h1>Internetes Kommunikációs Protokollok</h1>
     <p>Az internet működéséhez szükséges alapvető kommunikációs protokollok és azok szerepe</p>
 </header>
+
+    <nav>
+        <a href="#http">HTTP</a>
+        <a href="#ftp">FTP</a>
+        <a href="#tcp">TCP</a>
+        <a href="#udp">UDP</a>
+        <a href="#ip">IP</a>
+        <a href="#ieee">IEEE 802.11</a>
+        <a href="#rip">RIP</a>
+        <a href="#https">HTTPS</a>
+        <a href="#smtp">SMTP</a>
+        <a href="#imap">IMAP</a>
+        <a href="#dhcp">DHCP</a>
+    </nav>
 
 <section>
     <h2>Protokollok és Szerepük</h2>
@@ -50,82 +98,125 @@
     <div class="protocol">
         <h3>Az OSI Modell</h3>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/OSI_mod_2.png/300px-OSI_mod_2.png" alt="OSI Modell Ábra">
-        <p>Az OSI (Open Systems Interconnection) modell hét rétegre osztja a hálózati kommunikációt, amely segíti a különböző hálózati elemek közötti kommunikációt.</p>
+        <p>Az OSI-modell segíti a hálózati rendszerek tervezését és diagnosztikáját azáltal, hogy a kommunikációs folyamatokat különböző szintekre bontja, így az egyes rétegeknél külön-külön lehet az esetleges hibákat feltárni és javítani. Emellett az OSI-modell biztosítja, hogy a különböző protokollok és eszközök egységesen működhessenek együtt, függetlenül a gyártótól.</p>
     </div>
 
     <!-- TCP/IP modell ábra -->
     <div class="protocol">
         <h3>A TCP/IP Modell</h3>
         <img src="https://www.szabilinux.hu/konya/konyv/8fejezet/Image281.gif" alt="TCP/IP Modell Ábra">
-        <p>A TCP/IP modell egyszerűbb megközelítést alkalmaz, ahol négy réteget különböztetünk meg. Ez a modell az internet működésének alapja.</p>
+        <p>hogy megbízható, kapcsolatorientált adatátvitelt biztosítson két eszköz között egy hálózaton. A TCP az internet legfontosabb protokolljai közé tartozik, mivel lehetővé teszi az adatok biztonságos, pontos és sorrendhelyes továbbítását. A TCP-t gyakran használják olyan alkalmazásokhoz, ahol fontos az adatok integritása, például fájlátvitel, webes böngészés és e-mail forgalom esetében.</p>
     </div>
 
     <!-- Protokollok -->
-    <div class="protocol">
+    <div class="protocol" id="http">
         <h3>HTTP (Hypertext Transfer Protocol)</h3>
-         <img src="https://www.awh.hu/assets/images/blog/27aaea5d-687e-4e54-bfb3-35b2e532b03c_httpnew.webp" alt="http Modell Ábra" width="500" height="600">
+         <img src="https://www.awh.hu/assets/images/blog/27aaea5d-687e-4e54-bfb3-35b2e532b03c_httpnew.webp" alt="http Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> N/A</p>
-        <p><strong>Feladata:</strong> A weboldalak letöltéséért felelős protokoll. A kliens-szerver kommunikáció során a kliens kérésére a szerver válaszol.</p>
+        <p><strong>Feladata:</strong>Az HTTP protokoll a weboldalak megtekintésére szolgál. A kliens (például egy böngésző) lekérést küld a szervernek, amely válaszként elküldi a kívánt tartalmat. Az HTTP-n keresztül küldött adatok nem titkosítottak.</p>
         <p><strong>Réteg:</strong> Alkalmazási réteg</p>
     </div>
 
-    <div class="protocol">
+    <div class="protocol" id="ftp">
         <h3>FTP (File Transfer Protocol)</h3>
-         <img src="https://images.ctfassets.net/bg6mjhdcqk2h/3kFoQpGfA7LNgm6kG5lq2W/b93b67522195335aec9c5b172d2e6500/Raysync_FTP_Server.png" alt="FTP Modell Ábra" width="500" height="600">
+         <img src="https://images.ctfassets.net/bg6mjhdcqk2h/3kFoQpGfA7LNgm6kG5lq2W/b93b67522195335aec9c5b172d2e6500/Raysync_FTP_Server.png" alt="FTP Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> N/A</p>
-        <p><strong>Feladata:</strong> Fájlok átvitele szerver és kliens között. Gyakran használják nagy méretű fájlok átvitelére.</p>
+        <p><strong>Feladata:</strong> Az FTP a fájlok átvitelére szolgál a számítógépek között egy hálózaton keresztül. A fájlok feltöltése és letöltése során használatos, de nem biztosít titkosítást, ezért a biztonságos változatát, az FTPS-t vagy az SFTP-t részesítik előnyben.</p>
         <p><strong>Réteg:</strong> Alkalmazási réteg</p>
     </div>
 
-    <div class="protocol">
+    <div class="protocol" id="tcp">
         <h3>TCP (Transmission Control Protocol)</h3>
-         <img src="https://www.szabilinux.hu/konya/konyv/8fejezet/Image281.gif" alt="TCP/IP Modell Ábra" width="500" height="600">
+         <img src="https://www.szabilinux.hu/konya/konyv/8fejezet/Image281.gif" alt="TCP/IP Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> N/A</p>
-        <p><strong>Feladata:</strong> Megbízható, kapcsolat-orientált adatátvitel biztosítása. Az adatok csomagokra bontása és sorrendbe állítása.</p>
+        <p><strong>Feladata:</strong> A TCP egyaránt elengedhetetlen a hálózatok stabilitása és az adatátvitel megbízhatósága szempontjából. Mivel biztosítja az adatok sorrendhelyes és hibamentes átvitelét, kulcsfontosságú minden olyan szolgáltatás számára, ahol az adatok pontossága kiemelten fontos (pl. webes böngészés, fájlletöltés, e-mail és biztonságos tranzakciók). A TCP megbízhatósága az interneten történő adatkommunikáció egyik legfontosabb pillére.</p>
         <p><strong>Réteg:</strong> Szállítási réteg</p>
     </div>
 
-    <div class="protocol">
+    <div class="protocol" id="udp">
         <h3>UDP (User Datagram Protocol)</h3>
-         <img src="https://bunnyacademy.b-cdn.net/F7AJp-What-Is-UDP-how-does-it-work-and-what-are-its-benefits.png" alt="udp Modell Ábra" width="500" height="600">
+         <img src="https://bunnyacademy.b-cdn.net/F7AJp-What-Is-UDP-how-does-it-work-and-what-are-its-benefits.png" alt="udp Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> N/A</p>
-        <p><strong>Feladata:</strong> Gyors, de nem megbízható adatátvitel. Nincs kapcsolat, a csomagok nem biztos, hogy sorrendben érkeznek.</p>
+        <p><strong>Feladata:</strong> Az UDP kapcsolat nélküli protokoll, ami gyors adatátvitelt biztosít, de nem garantálja a csomagok sorrendjét vagy az adat integritását. Hang- és videostreaminghez, valamint online játékokhoz használják, ahol fontosabb a sebesség, mint az adatbiztonság.</p>
         <p><strong>Réteg:</strong> Szállítási réteg</p>
     </div>
 
-    <div class="protocol">
+    <div class="protocol" id="ip">
         <h3>IP (Internet Protocol)</h3>
-         <img src="https://www.fortinet.com/content/dam/fortinet/images/cyberglossary/ip-address-types.jpeg" alt="TCP/IP Modell Ábra" width="500" height="600">
+         <img src="https://www.fortinet.com/content/dam/fortinet/images/cyberglossary/ip-address-types.jpeg" alt="TCP/IP Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> IPv4 (RFC 791), IPv6 (RFC 8200)</p>
-        <p><strong>Feladata:</strong> Az adatok címzése és útválasztása a hálózaton keresztül. Az IP címek segítségével biztosítja az eszközök azonosítását.</p>
+        <p><strong>Feladata:</strong>hogy biztosítsa az adatcsomagok útvonalának meghatározását és azok célba juttatását a hálózaton belül, legyen az akár egy helyi hálózat (LAN) vagy az internet. Az IP a hálózati réteg (Network Layer) protokollja, és az egyik legfontosabb elem az adatok hálózati továbbításában. Az IP protokoll a csomagkapcsolt hálózatok alapelvein alapul, ahol az adatok kisebb csomagokra vannak bontva, amelyeket egyedileg kezel.</p>
         <p><strong>Réteg:</strong> Hálózati réteg</p>
     </div>
 
-    <div class="protocol">
+    <div class="protocol" id="ieee">
         <h3>IEEE 802.11 (Wi-Fi)</h3>
-         <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231027121916/Blank-diagram-(11).png" alt="ieee Modell Ábra" width="500" height="600">
+         <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231027121916/Blank-diagram-(11).png" alt="ieee Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> IEEE 802.11a/b/g/n/ac</p>
-        <p><strong>Feladata:</strong> Vezeték nélküli hálózatok (Wi-Fi) adatátviteli szabványa, amely biztosítja az eszközök közötti kommunikációt a fizikai és adatkapcsolati rétegen.</p>
+        <p><strong>Feladata:</strong> Az IEEE 802.11 szabvány feladata, hogy meghatározza a vezeték nélküli helyi hálózatok (WLAN) működési szabályait, és biztosítsa a különböző gyártók Wi-Fi eszközeinek együttműködését. Az 1997-ben megjelent első verzió óta a szabványt folyamatosan fejlesztik, újabb és gyorsabb változatokat bevezetve, amelyek nagyobb sebességet, megbízhatóságot és biztonságot nyújtanak.</p>
         <p><strong>Réteg:</strong> Fizikai és Adatkapcsolati réteg</p>
     </div>
 
-    <div class="protocol">
+    <div class="protocol" id="rip">
         <h3>RIP (Routing Information Protocol)</h3>
-        <img src="https://www.techtarget.com/rms/onlineimages/whatis-routing_info_protocol.png" alt="rip Modell Ábra" width="500" height="600">
+        <img src="https://www.techtarget.com/rms/onlineimages/whatis-routing_info_protocol.png" alt="rip Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> RFC 1058</p>
-        <p><strong>Feladata:</strong> Egy egyszerű útválasztási protokoll, amely az útvonalak távolságát és a hálózat elérhetőségét kommunikálja más útválasztók között.</p>
+        <p><strong>Feladata:</strong>Az RIP rendszeresen megosztja az egyes routerek ismert útvonalait más routerekkel. Minden router egy táblát tart fenn, amely a hálózati célokat és az ezekhez vezető ugrásszámokat tartalmazza.</p>
         <p><strong>Réteg:</strong> Hálózati réteg</p>
     </div>
 
-    <div class="protocol">
-        <h3>DNS (Domain Name System)</h3>
-         <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*goSb1oow5UBNF3KkzvOX8A.png" alt="dns Modell Ábra" width="500" height="600">
+    <div class="protocol" id="https">
+        <h3>HTTPS (Hypertext Transfer Protocol Secure)</h3>
+         <img src="https://t2568455.p.clickup-attachments.com/t2568455/c77ddc18-1773-41c0-848c-32b368cc9646/HTTP_protokoll.png" alt="https Modell Ábra" width="600" height="700">
+        <p><strong>Száma:</strong> Port 443 </p>
+        <p><strong>Feladata:</strong>A HTTPS az HTTP titkosított változata, amely az SSL (Secure Sockets Layer) vagy a TLS (Transport Layer Security) protokollt használja a biztonságos kommunikáció érdekében. Weboldalak és webalkalmazások esetén elengedhetetlen a felhasználói adatok védelme érdekében.</p>
+        <p><strong>Réteg:</strong> Alkalmazási réteg</p>
+    </div>
+
+    <div class="protocol" id="smtp">
+        <h3>SMTP (Simple Mail Transfer Protocol)</h3>
+         <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240226095034/SMTP-Gif.gif" alt="smtp Modell Ábra" width="600" height="700">
         <p><strong>Száma:</strong> N/A</p>
-        <p><strong>Feladata:</strong> A domain nevek IP címekké való átalakítása, hogy a felhasználók könnyebben elérhessék az internetes erőforrásokat.</p>
+        <p><strong>Feladata:</strong> Az IMAP az e-mailek szerverről való letöltésére szolgál, és lehetővé teszi a levelek kezelését anélkül, hogy letöltenénk őket a helyi gépre. Az IMAP protokollal több eszközön is szinkronban tarthatók az e-mailek.</p>
+        <p><strong>Réteg:</strong> Alkalmazási réteg</p>
+    </div>
+    
+    <div class="protocol" id="imap">
+        <h3>IMAP (Internet Message Access Protocol)</h3>
+         <img src="https://www.cloudns.net/blog/wp-content/uploads/2023/02/IMAP.png" alt="imap Modell Ábra" width="600" height="700">
+        <p><strong>Száma:</strong> Port 143 (nem titkosított), illetve 993 (titkosított)</p>
+        <p><strong>Feladata:</strong> Az SMTP az e-mailek küldésére szolgál. Ez a protokoll biztosítja, hogy az e-mailek a megfelelő címzettekhez érkezzenek, és gyakran együttműködik más protokollokkal, mint például az IMAP és a POP3.</p>
+        <p><strong>Réteg:</strong> Alkalmazási réteg</p>
+    </div>
+
+    <div class="protocol" id="dhcp">
+        <h3>DHCP (Dynamic Host Configuration Protocol)</h3>
+         <img src="https://www.akamai.com/site/en/images/article/2024/how-does-dhcp-work.png" alt="dhcp Modell Ábra" width="600" height="700">
+        <p><strong>Száma:</strong> N/A</p>
+        <p><strong>Feladata:</strong> A DHCP automatikusan kiosztja az IP-címeket a hálózatra csatlakozó eszközök számára. Ezzel megkönnyíti a hálózati konfigurációt, mivel az eszközöknek nem kell kézi IP-beállítást végezniük.</p>
         <p><strong>Réteg:</strong> Alkalmazási réteg</p>
     </div>
 
 </section>
+    <!-- Vissza a tetejére gomb -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Vissza a tetejére</button>
 
-</body>
-</html>
+    <script>
+        // Gomb megjelenítése, ha a felhasználó 20px-nél lejjebb görget
+        window.onscroll = function() {
+            var btn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Gomb működése: oldal tetejére görgetés
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    </body>
+    </html>
