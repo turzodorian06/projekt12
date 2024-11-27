@@ -88,6 +88,16 @@
         <a href="#smtp">SMTP</a>
         <a href="#imap">IMAP</a>
         <a href="#dhcp">DHCP</a>
+        <a href="#smtp">SMTP</a>
+        <a href="#dns">DNS</a>
+        <a href="#arp">ARP</a>
+        <a href="#telnet">TELNET</a>
+        <a href="#bgp">BGP</a>
+        <a href="#ldap">LDAP</a>
+        <a href="#mpls">MPLS</a>
+         <a href="#bgp">BGP</a>
+         <a href="#bgp">BGP</a>
+        
     </nav>
 
 <section>
@@ -197,6 +207,63 @@
         <p><strong>Réteg:</strong> Alkalmazási réteg</p>
     </div>
 
+    <!-- TCP/IP modell ábra -->
+    <div class="protocol" id= "smtp">
+        <h3> SMTP (Simple Mail Transfer Protocol) </h3>
+        <img src="https://szit.hu/lib/exe/fetch.php?media=oktatas:halozat:e-mail_weben.png" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>Az SMTP, vagyis a Simple Mail Transfer Protocol az email kommunikáció egyik alappillére, de jelentősége gyakran észrevétlen marad. Ez a világszerte használt szabványos protokoll az emailek küldésére. Ez felelős az emailek egyik szerverről a másikra történő küldéséért. Amikor megnyomod a „küldés” gombot egy email megírását követően, az SMTP az a protokoll, amely eljuttatja azt a kimenő postaládából a címzett postaládájába. Hasonlít a postás munkájára, aki egyik helyről a másikra juttatja el a leveleket.</p>
+    </div>
+
+       <div class="protocol" id= "dns">
+        <h3> DNS (Domain Name System) </h3>
+        <img src="https://performanceconnectivity.com/wp-content/uploads/DNS-Explained.jpg" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>A DNS a domain nevek és IP-címek közötti leképezést végzi. Amikor például beírsz egy webcímet a böngészőbe, a DNS segít átalakítani azt a megfelelő IP-címre, hogy a böngésző megtalálja a szervert.</p>
+    </div>
+
+    <div class="protocol" id= "arp">
+        <h3> ARP (Address Resolution Protocol) </h3>
+        <img src="https://www.fortinet.com/content/dam/fortinet/images/cyberglossary/what-is-arp.jpg" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>Az ARP feladata, hogy a cél IP-címet megkeresse a helyi tárban és amennyiben megtalálta, hozzárendelje a MAC címet. Ha nem találja, akkor üzenetszórásos kérést küld ki a hálózatba IP-cím alapján a MAC címet kérve, melyre csak az a gép fog válaszolni, amelyik az adott IP-címmel rendelkezik.</p>
+    </div>
+
+   <div class="protocol" id= "telnet">
+        <h3> Telnet / SSH (Secure Shell) </h3>
+        <img src="https://www.cloudns.net/blog/wp-content/uploads/2023/12/Telnet.png" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>A telnet lényege, hogy egy számítógépről távolról, hálózaton keresztül be lehet jelentkezni egy másik számítógépre, ahol programokat lehet futtatni, amihez parancssori felületet biztosít. A telnet protokoll célja egy általánosan elérhető, kétirányú, nyolcbites byte-alapú kommunikációs rendszer biztosítása. Egyaránt használható két terminál közötti (linking), illetve processzek közötti kommunikációra. TCP alapon működik. </p>
+    </div>
+
+    <div class="protocol" id= "bgp">
+        <h3> BGP (Border Gateway Protocol) </h3>
+        <img src="https://www.noction.com/wp-content/uploads/2012/03/bgp.jpg" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>A BGP (Border Gateway Protocol) egy autonóm rendszerek (AS) közötti forgalomirányító protokoll, mely a különböző AS-ek hálózati adminisztrátorai által meghatározott útvonalak, hálózati politikák és szabályrendszerek alapján hozza meg az útvonalválasztási döntéseket.</p>
+    </div>
+
+     <div class="protocol" id= "ldap">
+        <h3> LDAP (Lightweight Directory Access Protocol)</h3>
+        <img src="https://www.okta.com/sites/default/files/styles/1640w_scaled/public/media/image/2021-03/how-ldap-works.png?itok=KPHB6M5H" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>Az LDAP (Lightweight Directory Access Protocol) egy egyszerűsített címtárhozzáférési protokoll, amely címtárak, címjegyzékek elérésére és karbantartására szolgáló, platformfüggetlen protokollcsalád. Olyan fa struktúrán alapuló adatbáziskezelést valósít meg, ahol tipikusan gyorsan kell keresni és sok kis információt kell benne elraktározni.</p>
+    </div>
+
+    <div class="protocol" id= "mpls">
+        <h3> MPLS (Multiprotocol Label Switching)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/L2_MPLS_VPN_en.svg" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>Az MPLS egy protokollfüggetlen adatátviteli technológia, amennyiben tetszőleges adatkapcsolati réteg fölött üzemelhet. Működésének lényege, hogy a hálózaton címkeutakat alakítanak ki, ahol az egyes MPLS útvonalválasztók csupán a csomagokra rakott címke alapján döntik el, hogy merre továbbítsák azt.</p>
+    </div>
+
+    <!--<div class="protocol" id= "dns">
+        <h3> DNS (Domain Name System) </h3>
+        <img src="https://performanceconnectivity.com/wp-content/uploads/DNS-Explained.jpg" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>A DNS a domain nevek és IP-címek közötti leképezést végzi. Amikor például beírsz egy webcímet a böngészőbe, a DNS segít átalakítani azt a megfelelő IP-címre, hogy a böngésző megtalálja a szervert.</p>
+    </div>
+
+    <div class="protocol" id= "dns">
+        <h3> DNS (Domain Name System) </h3>
+        <img src="https://performanceconnectivity.com/wp-content/uploads/DNS-Explained.jpg" alt="TCP/IP Modell Ábra" width="600" height="700">
+        <p>A DNS a domain nevek és IP-címek közötti leképezést végzi. Amikor például beírsz egy webcímet a böngészőbe, a DNS segít átalakítani azt a megfelelő IP-címre, hogy a böngésző megtalálja a szervert.</p>
+    </div>  -->
+
+    
+
 </section>
     <!-- Vissza a tetejére gomb -->
     <button id="scrollToTopBtn" onclick="scrollToTop()">Vissza a tetejére</button>
@@ -220,3 +287,5 @@
 
     </body>
     </html>
+
+
